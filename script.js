@@ -143,7 +143,7 @@ function renderFeed() {
         if (post.quotePostId && post.quotePostData) {
             const quoteUser = allUsers[post.quotePostData.sender] || { name: 'مستخدم', avatarUrl: '' };
             quoteHtml = `
-                <div class="mt-3 border border-[#2f3336] rounded-2xl p-3 cursor-pointer" onclick="event.stopPropagation(); openCommentsModal('${post.quotePostId}')">
+                <div class="mt-3 border border-[rgba(255,255,255,0.08)] rounded-2xl p-3 cursor-pointer" onclick="event.stopPropagation(); openCommentsModal('${post.quotePostId}')">
                     <div class="flex gap-2 items-center mb-2">
                         <div class="w-6 h-6 rounded-full bg-[#1d9bf0] overflow-hidden">${quoteUser.avatarUrl ? `<img src="${quoteUser.avatarUrl}">` : quoteUser.name?.charAt(0)}</div>
                         <span class="font-bold text-sm">${escapeHtml(quoteUser.name)}</span>
@@ -283,10 +283,12 @@ window.toggleLike = async function(postId, btn) {
     if (likedBy[currentUser.uid]) { 
         likes--; 
         delete likedBy[currentUser.uid]; 
+        showToast('تم إلغاء الإعجاب');
     } else { 
         likes++; 
         likedBy[currentUser.uid] = true; 
         addNotification(post.sender, 'like', postId);
+        showToast('❤️ أعجبتك');
         if (btn) {
             const icon = btn.querySelector('i');
             if (icon) icon.classList.add('heart-animation');
@@ -323,7 +325,7 @@ window.toggleRetweet = async function(postId, btn) {
         retweetedBy[currentUser.uid] = true;
         retweetCount++;
         addNotification(post.sender, 'retweet', postId);
-        showToast('تم إعادة التغريد');
+        showToast('🔄 تم إعادة التغريد');
     }
     await update(postRef, { retweets, retweetedBy });
     if (btn) {
@@ -344,7 +346,7 @@ window.toggleBookmark = async function(postId, btn) {
     } else {
         await set(userRef, true);
         bookmarks[postId] = true;
-        showToast('تمت إضافة إلى الإشارات المرجعية');
+        showToast('📌 تمت إضافة إلى الإشارات المرجعية');
     }
     if (btn) btn.classList.toggle('active');
 };
@@ -439,7 +441,7 @@ window.showReplyInput = function(commentId) {
     const replyDiv = document.getElementById(`reply-input-${commentId}`);
     if (!replyDiv) return;
     if (replyDiv.innerHTML) { replyDiv.innerHTML = ''; return; }
-    replyDiv.innerHTML = `<div class="flex gap-2 mt-2"><input type="text" id="reply-text-${commentId}" class="flex-1 bg-[#1a1a2a] border border-[#2f3336] rounded-full px-3 py-2 text-sm" placeholder="اكتب رداً..." onkeypress="if(event.key==='Enter') addReply('${commentId}')"><button onclick="addReply('${commentId}')" class="bg-[#1d9bf0] text-white px-4 py-2 rounded-full text-sm">نشر</button></div>`;
+    replyDiv.innerHTML = `<div class="flex gap-2 mt-2"><input type="text" id="reply-text-${commentId}" class="flex-1 bg-[#1a1a1a] border border-[#2f3336] rounded-full px-3 py-2 text-sm" placeholder="اكتب رداً..." onkeypress="if(event.key==='Enter') addReply('${commentId}')"><button onclick="addReply('${commentId}')" class="bg-[#1d9bf0] text-white px-4 py-2 rounded-full text-sm">نشر</button></div>`;
 };
 
 window.addReply = async function(commentId) {
@@ -603,8 +605,8 @@ async function loadProfileData(userId) {
         buttonsDiv.innerHTML = '';
         if (userId === currentUser.uid) {
             buttonsDiv.innerHTML = `
-                <button class="profile-btn profile-btn-primary" onclick="openEditProfileModal()">تعديل الملف</button>
-                <button class="profile-btn profile-btn-secondary" onclick="logout()">تسجيل خروج</button>
+                <button class="profile-btn profile-btn-primary" onclick="openEditProfileModal()">✏️ تعديل الملف</button>
+                <button class="profile-btn profile-btn-secondary" onclick="logout()">🚪 تسجيل خروج</button>
                 ${isAdmin ? '<button class="profile-btn profile-btn-secondary" onclick="openAdmin()">🔧 لوحة التحكم</button>' : ''}
             `;
         } else {
@@ -666,6 +668,7 @@ window.saveProfileEdit = async function() {
     setTimeout(() => location.reload(), 1000);
 };
 
+// ========== UPLOAD AVATAR/COVER ==========
 window.changeAvatar = function() { document.getElementById('avatarInput')?.click(); };
 window.changeCover = function() { document.getElementById('coverInput')?.click(); };
 
@@ -679,7 +682,7 @@ if (!document.getElementById('avatarInput')) {
     avatarInput.addEventListener('change', async (e) => {
         const file = e.target.files[0];
         if (!file) return;
-        showToast('جاري رفع الصورة...');
+        showToast('📤 جاري رفع الصورة...');
         const result = await uploadMedia(file);
         await update(ref(db, `users/${currentUser.uid}`), { avatarUrl: result.url });
         showToast('✅ تم تحديث الصورة الشخصية');
@@ -697,7 +700,7 @@ if (!document.getElementById('coverInput')) {
     coverInput.addEventListener('change', async (e) => {
         const file = e.target.files[0];
         if (!file) return;
-        showToast('جاري رفع الصورة...');
+        showToast('📤 جاري رفع الصورة...');
         const result = await uploadMedia(file);
         await update(ref(db, `users/${currentUser.uid}`), { coverUrl: result.url });
         showToast('✅ تم تحديث صورة الغلاف');
@@ -712,11 +715,13 @@ window.toggleFollow = async function(userId, btn) {
     const targetRef = ref(db, `users/${userId}/followers/${currentUser.uid}`);
     const snap = await get(userRef);
     if (snap.exists()) {
-        await set(userRef, null); await set(targetRef, null);
+        await set(userRef, null); 
+        await set(targetRef, null);
         if (btn) btn.innerText = '➕ متابعة';
         showToast(`👋 توقفت عن متابعة ${allUsers[userId]?.name}`);
     } else {
-        await set(userRef, true); await set(targetRef, true);
+        await set(userRef, true); 
+        await set(targetRef, true);
         if (btn) btn.innerText = '✅ متابع';
         addNotification(userId, 'follow');
         showToast(`👥 بدأت بمتابعة ${allUsers[userId]?.name}`);
@@ -807,7 +812,7 @@ async function loadPrivateMessages(otherUserId) {
         const time = new Date(msg.timestamp).toLocaleTimeString();
         let content = '';
         if (msg.type === 'text') content = `<div class="message-bubble ${isSent ? 'sent' : 'received'}">${escapeHtml(msg.text)}</div>`;
-        else if (msg.type === 'image') content = `<img src="${msg.imageUrl}" class="message-image max-w-[200px] rounded-2xl cursor-pointer" onclick="window.open('${msg.imageUrl}')">`;
+        else if (msg.type === 'image') content = `<img src="${msg.imageUrl}" class="message-image max-w-[180px] rounded-2xl cursor-pointer" onclick="window.open('${msg.imageUrl}')">`;
         else if (msg.type === 'audio') content = `<div class="message-audio"><audio controls src="${msg.audioUrl}"></audio></div>`;
         container.innerHTML += `<div class="chat-message ${isSent ? 'sent' : 'received'}"><div>${content}<div class="text-[10px] opacity-50 mt-1">${time}</div></div></div>`;
     }
@@ -943,7 +948,7 @@ window.searchAll = function() {
     if (users.length === 0) resultsDiv.innerHTML = '<div class="text-center text-gray-500 py-10">لا توجد نتائج</div>';
 };
 
-// ========== ADMIN - MODERN ==========
+// ========== ADMIN ==========
 window.openAdmin = async function() {
     if (!isAdmin) return;
     const statsDiv = document.getElementById('adminStats');
@@ -1104,4 +1109,4 @@ onAuthStateChanged(auth, async (user) => {
     }
 });
 
-console.log('✅ Sotwe Platform Ready - Full Features');
+console.log('✅ Nexus Platform Ready');
