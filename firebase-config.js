@@ -18,8 +18,7 @@ export const db = getDatabase(app);
 
 export { ref, push, set, onValue, update, get, child, remove };
 
-// Cloudinary Configuration
 export const CLOUD_NAME = 'dnmpmysk6';
 export const UPLOAD_PRESET = 'do_2gg';
 
-console.log('✅ Firebase Ready');
+console.log('✅ Firebase Ready - Nexus Platform');
