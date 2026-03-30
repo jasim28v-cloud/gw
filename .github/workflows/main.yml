@@ -1,0 +1,39 @@
+name: Vortex Trends Auto Update
+
+on:
+  schedule:
+    # طھ6ط¯ظٹط« ظƒظ„ 30 ط¯ظ‚ظٹظ‚ط©
+    - cron: '*/60 * * * *'
+  workflow_dispatch: # ظ„ظ„ط³ظ…ط§ط­ ظ„ظƒ ط¨طھط´ط؛ظٹظ„ظ‡ ظٹط¯ظˆظٹط§ظ‹ ظ„ظ„طھط¬ط±ط¨ط©
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 lxml
+
+      - name: Run Scraper
+        # ظ‡ط°ط§ ط§ظ„ط³ط·ط± ط³ظٹظ‚ظˆظ… ط¨طھط´ط؛ظٹظ„ ظƒظˆط¯ ط§ظ„طھط±ظٹظ†ط¯ط§طھ ط§ظ„ط¬ط¯ظٹط¯
+        run: python scraper.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Vortex-Bot"
+          git config --global user.email "bot@vortex.com"
+          git add index.html
+          # ط§ظ„ط³ط·ط± ط§ظ„طھط§ظ„ظٹ ظٹظ…ظ†ط¹ ط§ظ„ظپط´ظ„ ط¥ط°ط§ ظ„ظ… ظٹطھط؛ظٹط± ط§ظ„ظ…ط­طھظˆظ‰
+          git commit -m "Vortex Trends Update: $(date)" || exit 0
+          git push
