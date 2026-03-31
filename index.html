@@ -3,533 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ط§ظ„ط­ط¯ط« 24 | ط§ظ„ظ†ط³ط®ط© ط§ظ„ظ…ط·ظˆط±ط©</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Freevmess Pro - Ultimate V2Ray</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="//data527.click/129ba2282fccd3392338/b1a648bd38/?placementName=default"></script>
     <style>
-        :root {
-            --glass-bg: rgba(255, 255, 255, 0.07);
-            --glass-border: rgba(255, 255, 255, 0.15);
-            --primary-accent: #00f2fe;
-            --danger-accent: #ff0844;
-            --text-main: #ffffff;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            background-attachment: fixed;
-            background-size: cover;
-            font-family: 'Cairo', sans-serif; 
-            color: var(--text-main); 
-            padding-top: 150px;
-        }
-        
-        header { 
-            background: rgba(0, 0, 0, 0.4); 
-            backdrop-filter: blur(25px); 
-            padding: 15px 5%; 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
-            border-bottom: 1px solid var(--glass-border);
-            display: flex; justify-content: space-between; align-items: center; 
-        }
-        .logo { font-size: 26px; font-weight: 900; color: #fff; text-decoration: none; }
-        .logo span { color: var(--danger-accent); text-shadow: 0 0 10px var(--danger-accent); }
-        
-        .ticker-wrap { 
-            position: fixed; top: 85px; width: 100%; 
-            background: rgba(255, 8, 68, 0.85); 
-            backdrop-filter: blur(10px);
-            color: #fff; overflow: hidden; height: 40px; 
-            display: flex; align-items: center; z-index: 999;
-        }
-        .ticker-title { background: #000; padding: 0 20px; font-weight: 900; z-index: 2; height: 100%; display: flex; align-items: center; font-size: 13px; }
-        .ticker-scroll { white-space: nowrap; animation: scroll 60s linear infinite; }
-        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-250%); } }
-
-        .container { max-width: 1250px; margin: 0 auto 50px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        
-        .glass-card { 
-            background: var(--glass-bg); 
-            backdrop-filter: blur(20px);
-            border-radius: 25px; overflow: hidden; 
-            transition: 0.4s; 
-            border: 1px solid var(--glass-border); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .glass-card:hover { transform: scale(1.03); border-color: var(--primary-accent); }
-        
-        .badge { position: absolute; top: 15px; left: 15px; background: var(--danger-accent); color: #fff; padding: 4px 15px; font-size: 11px; font-weight: 700; border-radius: 10px; z-index: 5; }
-        .card-image { height: 210px; overflow: hidden; }
-        .card-image img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .card-content { padding: 25px; }
-        .card-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.5; }
-        .card-snippet { font-size: 13px; color: #ccc; margin-bottom: 20px; }
-        
-        .meta-data { display: flex; justify-content: space-between; font-size: 11px; color: var(--primary-accent); margin-bottom: 20px; border-top: 1px solid var(--glass-border); padding-top: 15px; }
-        
-        .action-area { display: flex; gap: 10px; }
-        .btn-prime { flex: 2; background: linear-gradient(90deg, #ff0844, #ffb199); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; }
-        .btn-outline { flex: 1; background: rgba(255,255,255,0.05); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-size: 12px; border: 1px solid var(--glass-border); }
-        
-        .ad-slot-wrapper { grid-column: 1 / -1; display: flex; justify-content: center; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px dashed var(--glass-border); }
-        
-        footer { text-align: center; padding: 40px; color: rgba(255,255,255,0.4); font-size: 12px; border-top: 1px solid var(--glass-border); }
-        
-        @media (max-width: 600px) { .container { grid-template-columns: 1fr; } }
+        body { font-family: 'Cairo', sans-serif; background-color: #fbfbfd; overflow-x: hidden; scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .ad-click { cursor: pointer; }
+        .filter-btn.active { background-color: #4338ca; color: white; }
+        #bridge-page { display: none; background: rgba(255,255,255,0.98); z-index: 9999; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body>
-    <script type="text/javascript" src="//data527.click/129ba2282fccd3392338/b1a648bd38/?placementName=default"></script> <header>
-        <a href="#" class="logo">ط§ظ„ط­ط¯ط« <span>24</span></a>
-        <div style="font-size: 12px; letter-spacing: 1px;">ًں“… 2026-03-31</div>
-    </header>
+<body class="pb-10">
 
-    <div class="ticker-wrap">
-        <div class="ticker-title">ط£ظ‡ظ… ط§ظ„ط£ظ†ط¨ط§ط،</div>
-        <div class="ticker-scroll">لحظة بلحظة.. تطورات الحرب الأمريكية الإسرائيلية على إيران â€¢ لحظة بلحظة.. تطورات المواجهات بين إسرائيل و"حزب الله" في لبنان â€¢ جلسة لمجلس الأمن عن استهداف اليونيفيل في لبنان.. تبادل اتهامات بين تل أبيب وبيروت â€¢ الأمم المتحدة: قانون "إعدام الفلسطينيين" انتهاك للقانون الإنساني الدولي â€¢ نتنياهو: المعركة ضد إيران تكبدنا أثمانا باهظة â€¢ بافلوفيتش يهز شباك منتخب السعودية بهدف مقصي مذهل â€¢ مفوض الدوري الأمريكي يهاجم إبراهيم حسن بسبب صلاح â€¢ ترامب: لا يزال أمامنا عمل لقمع قدرات إيران الهجومية â€¢ مديونية خيالية تهز إمبراطورية أحد أكبر رجال الأعمال في مصر â€¢ روسيا تدين استهداف اليونيفيل والصحفيين في لبنان وتحذر من كارثة إنسانية â€¢ ميرتس يوضح تصريحاته حول عودة اللاجئين السوريين من ألمانيا بعد موجة انتقادات واسعة â€¢ "حزب الله" اللبناني ينفي ارتباطه بعناصر على أراضي البحرين</div>
+    <div id="bridge-page" class="fixed inset-0 flex flex-col items-center justify-center text-center p-6">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-600 mb-4"></div>
+        <h2 class="text-2xl font-black mb-2 text-slate-800">جاري فحص وتأمين الرابط...</h2>
+        <p class="text-gray-500">يرجى الانتظار قليلاً للحصول على أفضل أداء</p>
     </div>
 
-    <main class="container">
+    <nav class="flex justify-between items-center px-6 py-5 max-w-6xl mx-auto border-b border-gray-100 bg-white sticky top-0 z-40">
+        <div class="flex items-center gap-3 ad-click" onclick="triggerBridge()">
+            <div class="w-10 h-10 bg-indigo-900 rounded-lg flex items-center justify-center shadow-lg"><i class="fas fa-bolt text-white"></i></div>
+            <span class="text-xl font-black text-slate-800 uppercase tracking-tighter">Freevmess</span>
+        </div>
+        <div class="text-left leading-none">
+            <span id="countdown" class="text-indigo-600 font-bold text-sm block tracking-widest">--:--:--</span>
+            <span class="text-[9px] text-gray-400 uppercase">Next Update In</span>
+        </div>
+    </nav>
+
+    <section class="px-6 py-12 text-center max-w-4xl mx-auto bg-white rounded-b-[40px] shadow-sm mb-8">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 gradient-text">خادم VMESS ذكي</h1>
+        <p class="text-gray-400 text-sm mb-8">سيرفرات محدثة من v2nodes بأفضل سرعة استجابة.</p>
+        <div class="ad-click" onclick="triggerBridge()"><img src="https://cdni.iconscout.com/illustration/premium/thumb/network-infrastructure-4437294-3684813.png" class="w-64 mx-auto"></div>
+    </section>
+
+    
+        <div class="flex justify-center my-8">
+            <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default">
+                <script src="//data527.click/js/responsive.js" async></script>
+            </ins>
+        </div>
+
+    <div class="flex overflow-x-auto gap-2 px-6 mb-8 max-w-2xl mx-auto no-scrollbar">
+        <button onclick="filterServers('ALL')" class="filter-btn active whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 text-xs font-bold shadow-sm transition-all">الكل</button>
+        <button onclick="filterServers('VMESS')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">VMESS</button>
+        <button onclick="filterServers('VLESS')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">VLESS</button>
+        <button onclick="filterServers('TROJAN')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">TROJAN</button>
+        <button onclick="filterServers('SS')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">Shadowsocks</button>
+    </div>
+
+    <main class="max-w-xl mx-auto px-6">
+        <div class="flex flex-col mb-10">
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="font-black text-xl text-slate-800">سيرفرات اليوم</h2>
+                <span class="bg-indigo-50 text-indigo-600 px-4 py-1 rounded-full text-[10px] font-bold border border-indigo-100 uppercase tracking-widest">2026-03-31</span>
+            </div>
+            <p class="text-[11px] text-gray-400 leading-relaxed text-right border-r-2 border-indigo-200 pr-3">
+                يتم جلب البيانات وتحديثها تلقائياً من خوادم النخبة لضمان استقرار الاتصال وحماية الخصوصية.
+                <br>
+                <span class="text-indigo-300 uppercase">Premium Nodes globally collected.</span>
+            </p>
+        </div>
         
-            <article class="glass-card">
-                <div class="badge">ط­طµط±ظٹ</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/static.ar/thumbnail/breaking_red.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">لحظة بلحظة.. تطورات الحرب الأمريكية الإسرائيلية على إيران</h2>
-                    <p class="card-snippet">
-         مع دخول الحرب الأمريكية الإسرائيلية على إيران شهرها الثاني، صعدت واشنطن تهديداتها بتحويل طهران إلى ج...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
+        <div id="servers-container">
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="TROJAN">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">TROJAN SERVER</span>
                     </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773184-%D9%84%D8%AD%D8%B8%D8%A9-%D8%A8%D9%84%D8%AD%D8%B8%D8%A9-%D8%AA%D8%B7%D9%88%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%B1%D8%A8-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A%D8%A9-%D8%B9%D9%84%D9%89-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
+                    <button onclick="copyText('trojan://BxceQaOe@16.162.188.208:25675?allowInsecure=1&sni=t.me%252Fripaojiedian#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">trojan://BxceQaOe@16.162.188.208:25675?allowInsecure=1&sni=t.me%252Fripaojiedian#...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('trojan://BxceQaOe@16.162.188.208:25675?allowInsecure=1&sni=t.me%252Fripaojiedian#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('TROJAN_0', 'trojan://BxceQaOe@16.162.188.208:25675?allowInsecure=1&sni=t.me%252Fripaojiedian#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q0', 'trojan://BxceQaOe@16.162.188.208:25675?allowInsecure=1&sni=t.me%252Fripaojiedian#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q0" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="TROJAN">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">TROJAN SERVER</span>
                     </div>
+                    <button onclick="copyText('trojan://BxceQaOe@18.167.134.238:44386?allowInsecure=1&sni=t.me%2Fripaojiedian#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط­طµط±ظٹ</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/static.ar/thumbnail/breaking_red.jpg" loading="lazy" alt="news">
-                    </a>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">trojan://BxceQaOe@18.167.134.238:44386?allowInsecure=1&sni=t.me%2Fripaojiedian#...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('trojan://BxceQaOe@18.167.134.238:44386?allowInsecure=1&sni=t.me%2Fripaojiedian#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('TROJAN_1', 'trojan://BxceQaOe@18.167.134.238:44386?allowInsecure=1&sni=t.me%2Fripaojiedian#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q1', 'trojan://BxceQaOe@18.167.134.238:44386?allowInsecure=1&sni=t.me%2Fripaojiedian#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-                <div class="card-content">
-                    <h2 class="card-title">لحظة بلحظة.. تطورات المواجهات بين إسرائيل و"حزب الله" في لبنان</h2>
-                    <p class="card-snippet">
-         يتواصل التصعيد على الحدود اللبنانية الإسرائيلية بين غارات إسرائيلية مكثفة وعمليات نوعية لـ"حزب الله"...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
+                <div id="q1" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
                     </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/middle_east/1773187-%D9%84%D8%AD%D8%B8%D8%A9-%D8%A8%D9%84%D8%AD%D8%B8%D8%A9-%D8%AA%D8%B7%D9%88%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A7%D8%AA-%D8%A8%D9%8A%D9%86-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D9%88%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%84%D9%87-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
+                    <button onclick="copyText('ss://YWVzLTI1Ni1nY206OEpDc1Bzc2ZnUzh0aVJ3aU1saEFSZz09@144.217.164.29:12000#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://YWVzLTI1Ni1nY206OEpDc1Bzc2ZnUzh0aVJ3aU1saEFSZz09@144.217.164.29:12000#...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://YWVzLTI1Ni1nY206OEpDc1Bzc2ZnUzh0aVJ3aU1saEFSZz09@144.217.164.29:12000#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_2', 'ss://YWVzLTI1Ni1nY206OEpDc1Bzc2ZnUzh0aVJ3aU1saEFSZz09@144.217.164.29:12000#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q2', 'ss://YWVzLTI1Ni1nY206OEpDc1Bzc2ZnUzh0aVJ3aU1saEFSZz09@144.217.164.29:12000#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q2" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
                     </div>
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@193.135.174.135:990#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط­طµط±ظٹ</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc0a014c59b7739b67fa5c.jpg" loading="lazy" alt="news">
-                    </a>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUr...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@193.135.174.135:990#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_3', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@193.135.174.135:990#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q3', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@193.135.174.135:990#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-                <div class="card-content">
-                    <h2 class="card-title">جلسة لمجلس الأمن عن استهداف اليونيفيل في لبنان.. تبادل اتهامات بين تل أبيب وبيروت</h2>
-                    <p class="card-snippet">
-         بدأت اليوم الثلاثاء جلسة مجلس الأمن الدولي بشأن استهداف  قوات الأمم المتحدة المؤقتة في لبنان "اليوني...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
+                <div id="q3" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="TROJAN">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">TROJAN SERVER</span>
                     </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/middle_east/1773468-%D8%AC%D9%84%D8%B3%D8%A9-%D9%84%D9%85%D8%AC%D9%84%D8%B3-%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%B9%D9%86-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D8%A7%D9%84%D9%8A%D9%88%D9%86%D9%8A%D9%81%D9%8A%D9%84-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86-%D8%AA%D8%A8%D8%A7%D8%AF%D9%84-%D8%A7%D8%AA%D9%87%D8%A7%D9%85%D8%A7%D8%AA-%D8%A8%D9%8A%D9%86-%D8%AA%D9%84-%D8%A3%D8%A8%D9%8A%D8%A8-%D9%88%D8%A8%D9%8A%D8%B1%D9%88%D8%AA/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
+                    <button onclick="copyText('trojan://telegram-id-privatevpns@52.47.95.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">trojan://telegram-id-privatevpns@52.47.95.160:22222?security=tls&alpn=http/1.1&header...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('trojan://telegram-id-privatevpns@52.47.95.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('TROJAN_4', 'trojan://telegram-id-privatevpns@52.47.95.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q4', 'trojan://telegram-id-privatevpns@52.47.95.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q4" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+        <div class="flex justify-center my-8">
+            <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default">
+                <script src="//data527.click/js/responsive.js" async></script>
+            </ins>
+        </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
                     </div>
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ@ncmrcg000116egb.cybervena.com:50099#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc08ce4c59b77d212ebcde.jpg" loading="lazy" alt="news">
-                    </a>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ@...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ@ncmrcg000116egb.cybervena.com:50099#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_5', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ@ncmrcg000116egb.cybervena.com:50099#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q5', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ@ncmrcg000116egb.cybervena.com:50099#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-                <div class="card-content">
-                    <h2 class="card-title">الأمم المتحدة: قانون "إعدام الفلسطينيين" انتهاك للقانون الإنساني الدولي</h2>
-                    <p class="card-snippet">
-         طالب مفوض الأمم المتحدة لحقوق الإنسان فولكر تورك، السلطات الإسرائيلية، بالإلغاء الفوري لقانون عقوبة ...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
+                <div id="q5" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VMESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VMESS SERVER</span>
                     </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773477-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A5%D8%B9%D8%AF%D8%A7%D9%85-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D9%8A%D9%86-%D8%A7%D9%86%D8%AA%D9%87%D8%A7%D9%83-%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
+                    <button onclick="copyText('vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1KUCIsImFkZCI6IjE2Ni44OC45OS44MCIsInBvcnQiOiI2MzU0IiwidHlwZSI6Im5vbmUiLCJpZCI6IjYxMzk1MmZhLTlhMWUtNDk0NC1iODVmLTM1ODdiMzU5MmIzYSIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiJcL2Fya2kiLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1W29wZW5wcm94eWxpc3QuY29tX...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1KUCIsImFkZCI6IjE2Ni44OC45OS44MCIsInBvcnQiOiI2MzU0IiwidHlwZSI6Im5vbmUiLCJpZCI6IjYxMzk1MmZhLTlhMWUtNDk0NC1iODVmLTM1ODdiMzU5MmIzYSIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiJcL2Fya2kiLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VMESS_6', 'vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1KUCIsImFkZCI6IjE2Ni44OC45OS44MCIsInBvcnQiOiI2MzU0IiwidHlwZSI6Im5vbmUiLCJpZCI6IjYxMzk1MmZhLTlhMWUtNDk0NC1iODVmLTM1ODdiMzU5MmIzYSIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiJcL2Fya2kiLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q6', 'vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1KUCIsImFkZCI6IjE2Ni44OC45OS44MCIsInBvcnQiOiI2MzU0IiwidHlwZSI6Im5vbmUiLCJpZCI6IjYxMzk1MmZhLTlhMWUtNDk0NC1iODVmLTM1ODdiMzU5MmIzYSIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiJcL2Fya2kiLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q6" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
                     </div>
+                    <button onclick="copyText('vless://ee740b72-87f6-45e4-a680-85d8d1cc3df1@194.36.39.78:8443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0&security=reality&sid=f1071c148a5aefc4&sni=rbc.ru&type=tcp#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
-            </article>
-                <div class="ad-slot-wrapper">
-                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://ee740b72-87f6-45e4-a680-85d8d1cc3df1@194.36.39.78:8443?encryption=none&flow=x...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vless://ee740b72-87f6-45e4-a680-85d8d1cc3df1@194.36.39.78:8443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0&security=reality&sid=f1071c148a5aefc4&sni=rbc.ru&type=tcp#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VLESS_7', 'vless://ee740b72-87f6-45e4-a680-85d8d1cc3df1@194.36.39.78:8443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0&security=reality&sid=f1071c148a5aefc4&sni=rbc.ru&type=tcp#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q7', 'vless://ee740b72-87f6-45e4-a680-85d8d1cc3df1@194.36.39.78:8443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=7HejPU15kdTl9QG_8AygEM3w0ythsbhG6q_SwUumyR0&security=reality&sid=f1071c148a5aefc4&sni=rbc.ru&type=tcp#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc0f7e42360457ac4bd0dd.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">نتنياهو: المعركة ضد إيران تكبدنا أثمانا باهظة</h2>
-                    <p class="card-snippet">
-         قال رئيس الوزراء الإسرائيلي، بنيامين نتنياهو، إن العمليات الإسرائيلية المشتركة مع الولايات المتحدة ض...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
+                <div id="q7" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
                     </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773488-%D9%86%D8%AA%D9%86%D9%8A%D8%A7%D9%87%D9%88-%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D9%83%D8%A9-%D8%B6%D8%AF-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%AA%D9%83%D8%A8%D8%AF%D9%86%D8%A7-%D8%A3%D8%AB%D9%85%D8%A7%D9%86%D8%A7-%D8%A8%D8%A7%D9%87%D8%B8%D8%A9/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
+                    <button onclick="copyText('vless://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@us.vpnhi.ru:443?allowInsecure=1&encryption=none&host=us.vpnhi.ru&path=%2Fvpnws&security=tls&sni=us.vpnhi.ru&type=ws#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@us.vpnhi.ru:443?allowInsecure=1&encrypti...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vless://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@us.vpnhi.ru:443?allowInsecure=1&encryption=none&host=us.vpnhi.ru&path=%2Fvpnws&security=tls&sni=us.vpnhi.ru&type=ws#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VLESS_8', 'vless://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@us.vpnhi.ru:443?allowInsecure=1&encryption=none&host=us.vpnhi.ru&path=%2Fvpnws&security=tls&sni=us.vpnhi.ru&type=ws#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q8', 'vless://ea8d14d4-ca12-4cd1-bcad-f0fa72f6eadc@us.vpnhi.ru:443?allowInsecure=1&encryption=none&host=us.vpnhi.ru&path=%2Fvpnws&security=tls&sni=us.vpnhi.ru&type=ws#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q8" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
                     </div>
+                    <button onclick="copyText('vless://f25eb463-e242-4fa9-b174-c305af3ab95e@kinopl20.dramatorg.net:443?allowInsecure=1&sni=kinopl20.dramatorg.net&security=tls#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc0d024c59b773fb462dc6.png" loading="lazy" alt="news">
-                    </a>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://f25eb463-e242-4fa9-b174-c305af3ab95e@kinopl20.dramatorg.net:443?allowInsecure...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vless://f25eb463-e242-4fa9-b174-c305af3ab95e@kinopl20.dramatorg.net:443?allowInsecure=1&sni=kinopl20.dramatorg.net&security=tls#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VLESS_9', 'vless://f25eb463-e242-4fa9-b174-c305af3ab95e@kinopl20.dramatorg.net:443?allowInsecure=1&sni=kinopl20.dramatorg.net&security=tls#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q9', 'vless://f25eb463-e242-4fa9-b174-c305af3ab95e@kinopl20.dramatorg.net:443?allowInsecure=1&sni=kinopl20.dramatorg.net&security=tls#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-                <div class="card-content">
-                    <h2 class="card-title">بافلوفيتش يهز شباك منتخب السعودية بهدف مقصي مذهل</h2>
-                    <p class="card-snippet">
-         سجل المدافع الصربي ستراهينيا بافلوفيتش هدفا خرافيا لمنتخب بلاده في شباك نظيره السعودي خلال المباراة ...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/sport/1773486-%D8%A8%D8%A7%D9%81%D9%84%D9%88%D9%81%D9%8A%D8%AA%D8%B4-%D9%8A%D9%87%D8%B2-%D8%B4%D8%A8%D8%A7%D9%83-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%A8%D9%87%D8%AF%D9%81-%D9%85%D9%82%D8%B5%D9%8A-%D9%85%D8%B0%D9%87%D9%84/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbf5794c59b7740d7f8618.png" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">مفوض الدوري الأمريكي يهاجم إبراهيم حسن بسبب صلاح</h2>
-                    <p class="card-snippet">
-         وجه مفوض دوري كرة القدم الأمريكي دون غاربر انتقادا لاذعا لإبراهيم حسن مدير منتخب مصر بسبب نصيحته لقا...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/sport/1773457-%D9%85%D9%81%D9%88%D8%B6-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A-%D9%8A%D9%87%D8%A7%D8%AC%D9%85-%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85-%D8%AD%D8%B3%D9%86-%D8%A8%D8%B3%D8%A8%D8%A8-%D8%B5%D9%84%D8%A7%D8%AD/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbfc6b42360456c56e0eed.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">ترامب: لا يزال أمامنا عمل لقمع قدرات إيران الهجومية</h2>
-                    <p class="card-snippet">
-         أعلن الرئيس الأمريكي دونالد ترامب، الثلاثاء، أن القوات الأمريكية لا تزال بحاجة إلى "العمل" لقمع القد...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773471-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%84%D8%A7-%D9%8A%D8%B2%D8%A7%D9%84-%D8%A3%D9%85%D8%A7%D9%85%D9%86%D8%A7-%D8%B9%D9%85%D9%84-%D9%84%D9%82%D9%85%D8%B9-%D9%82%D8%AF%D8%B1%D8%A7%D8%AA-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D9%87%D8%AC%D9%88%D9%85%D9%8A%D8%A9/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-                <div class="ad-slot-wrapper">
-                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
-                </div>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbfc024c59b773fc4b8c61.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">مديونية خيالية تهز إمبراطورية أحد أكبر رجال الأعمال في مصر</h2>
-                    <p class="card-snippet">
-         كشفت تقارير مصرية عن واحدة من أكبر حالات التعثر الائتماني في تاريخ القطاع المصرفي المصري بعد الكشف ع...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/business/1773467-%D9%85%D8%AF%D9%8A%D9%88%D9%86%D9%8A%D8%A9-%D8%AE%D9%8A%D8%A7%D9%84%D9%8A%D8%A9-%D8%AA%D9%87%D8%B2-%D8%A5%D9%85%D8%A8%D8%B1%D8%A7%D8%B7%D9%88%D8%B1%D9%8A%D8%A9-%D8%A3%D8%AD%D8%AF-%D8%A3%D9%83%D8%A8%D8%B1-%D8%B1%D8%AC%D8%A7%D9%84-%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc02384c59b7738e53cafb.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">روسيا تدين استهداف اليونيفيل والصحفيين في لبنان وتحذر من كارثة إنسانية</h2>
-                    <p class="card-snippet">
-         أدان مندوب روسيا في مجلس الأمن الدولي فاسيلي نيبينزيا الهجمات الإسرائيلية المتصاعدة على لبنان، والتي...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773476-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D8%AA%D8%AF%D9%8A%D9%86-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D8%A7%D9%84%D9%8A%D9%88%D9%86%D9%8A%D9%81%D9%8A%D9%84-%D9%88%D8%A7%D9%84%D8%B5%D8%AD%D9%81%D9%8A%D9%8A%D9%86-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86-%D9%88%D8%AA%D8%AD%D8%B0%D8%B1-%D9%85%D9%86-%D9%83%D8%A7%D8%B1%D8%AB%D8%A9-%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbfeeb42360458692cd6f1.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">ميرتس يوضح تصريحاته حول عودة اللاجئين السوريين من ألمانيا بعد موجة انتقادات واسعة</h2>
-                    <p class="card-snippet">
-         أصدر المستشار الألماني فريدريش ميرتس بيانا توضيحيا حول تصريحاته عن عودة اللاجئين السوريين إلى وطنهم،...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773462-%D9%85%D9%8A%D8%B1%D8%AA%D8%B3-%D9%8A%D9%88%D8%B6%D8%AD-%D8%AA%D8%B5%D8%B1%D9%8A%D8%AD%D8%A7%D8%AA%D9%87-%D8%AD%D9%88%D9%84-%D8%B9%D9%88%D8%AF%D8%A9-%D8%A7%D9%84%D9%84%D8%A7%D8%AC%D8%A6%D9%8A%D9%86-%D8%A7%D9%84%D8%B3%D9%88%D8%B1%D9%8A%D9%8A%D9%86-%D9%85%D9%86-%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7-%D8%A8%D8%B9%D8%AF-%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D8%AF%D8%A7%D8%AA-%D9%88%D8%A7%D8%B3%D8%B9%D8%A9/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbf8f34c59b77d212ebccc.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">"حزب الله" اللبناني ينفي ارتباطه بعناصر على أراضي البحرين</h2>
-                    <p class="card-snippet">
-         أصدر "حزب الله" اللبناني، الثلاثاء، بيانا حول ما وصقه بـ"الاتهامات الصادرة عن وزارة داخلية البحرين"،...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/middle_east/1773456-%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%84%D9%87-%D8%A7%D9%84%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A-%D9%8A%D9%86%D9%81%D9%8A-%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D8%B7%D9%87-%D8%A8%D8%B9%D9%86%D8%A7%D8%B5%D8%B1-%D8%B9%D9%84%D9%89-%D8%A3%D8%B1%D8%A7%D8%B6%D9%8A-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D9%86/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-                <div class="ad-slot-wrapper">
-                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
-                </div>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbf84f42360456c56e0ee3.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">بريطانيا تزود دولا خليجية بمنظومات دفاع جوي متقدمة لصد الضربات الإيرانية</h2>
-                    <p class="card-snippet">
-         أعلن وزير الدفاع البريطاني جون هيلي أن بلاده زودت دولا عربية في منطقة الخليج بمنظومات دفاع جوي متطور...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773449-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D8%A7-%D8%AA%D8%B2%D9%88%D8%AF-%D8%AF%D9%88%D9%84%D8%A7-%D8%AE%D9%84%D9%8A%D8%AC%D9%8A%D8%A9-%D8%A8%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A7%D8%AA-%D8%AF%D9%81%D8%A7%D8%B9-%D8%AC%D9%88%D9%8A-%D9%85%D8%AA%D9%82%D8%AF%D9%85%D8%A9-%D9%84%D8%B5%D8%AF-%D8%A7%D9%84%D8%B6%D8%B1%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A%D8%A9/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc08b94c59b77d2873e025.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">العراق.. اختطاف صحافية أمريكية في بغداد</h2>
-                    <p class="card-snippet">
-         أعلنت وزارة الداخلية العراقية اختطاف صحافية أجنبية من قبل مجموعة من الأفراد المجهولين في العاصمة بغد...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/middle_east/1773481-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82-%D8%A7%D8%AE%D8%AA%D8%B7%D8%A7%D9%81-%D8%B5%D8%AD%D9%81%D9%8A%D8%A9-%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc0a6d42360457b028cc33.png" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">بوتين والسيسي يبحثان خفض التوتر بالمنطقة</h2>
-                    <p class="card-snippet">
-         بحث الرئيس الروسي فلاديمير بوتين ونظيره المصري عبد الفتاح السيسي الأوضاع في الشرق الأوسط، وسط تصعيد ...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/features/1773482-%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%B3%D9%8A-%D9%8A%D8%A8%D8%AD%D8%AB%D8%A7%D9%86-%D8%AE%D9%81%D8%B6-%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1-%D8%A8%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cc086b4c59b7740a3c44bf.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">هجوم مكثف وواسع.. حزب الله يعلن استهداف قواعد إسرائيلية استراتيجية بصواريخ نوعية</h2>
-                    <p class="card-snippet">
-         أعلنت حزب الله اللبناني تنفيذ سلسلة هجمات صاروخية ومسيّرات نوعية على قواعد إسرائيلية استراتيجية في ش...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/middle_east/1773480-%D9%87%D8%AC%D9%88%D9%85-%D9%85%D9%83%D8%AB%D9%81-%D9%88%D9%88%D8%A7%D8%B3%D8%B9-%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%84%D9%87-%D9%8A%D8%B9%D9%84%D9%86-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D9%82%D9%88%D8%A7%D8%B9%D8%AF-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9-%D8%A8%D8%B5%D9%88%D8%A7%D8%B1%D9%8A%D8%AE-%D9%86%D9%88%D8%B9%D9%8A%D8%A9/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-                <div class="ad-slot-wrapper">
-                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
-                </div>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbff6e42360478df5cb988.png" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">بحضور رئيس "الفيفا".. إيران تكتسح كوستاريكا استعدادا لكأس العالم</h2>
-                    <p class="card-snippet">
-         اكتسح منتخب إيران نظيره كوستاريكا بخمسة أهداف دون رد في مباراة ودية أقيمت اليوم الثلاثاء في إطار است...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/sport/1773473-%D8%A8%D8%AD%D8%B6%D9%88%D8%B1-%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%81%D9%8A%D9%81%D8%A7-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%AA%D9%83%D8%AA%D8%B3%D8%AD-%D9%83%D9%88%D8%B3%D8%AA%D8%A7%D8%B1%D9%8A%D9%83%D8%A7-%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%D8%A7-%D9%84%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbf83442360478df5cb984.png" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">الحرب بإيران.. بين تصعيد ومواجهة مفتوحة</h2>
-                    <p class="card-snippet">
-...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/prg/%D8%A7%D9%84%D8%AD%D8%B1%D8%A8-%D8%A8%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%A8%D9%8A%D9%86-%D8%AA%D8%B5%D8%B9%D9%8A%D8%AF-%D9%88%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D9%85%D9%81%D8%AA%D9%88%D8%AD%D8%A9-1773448/%D8%A7%D8%B3%D8%AA%D8%AF%D9%8A%D9%88-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbe425423604572d3bf8fe.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">الآن.. هجوم واسع ومكثف لحزب الله بالصواريخ والمسيرات يستهدف حيفا وشمال إسرائيل</h2>
-                    <p class="card-snippet">
-         دوت صافرات الإنذار قبل قليل في حيفا ومحيطها ومناطق واسعة من شمال إسرائيل، إثر هجوم واسع بالصواريخ وا...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/middle_east/1773432-%D8%A7%D9%84%D8%A2%D9%86-%D9%87%D8%AC%D9%88%D9%85-%D9%88%D8%A7%D8%B3%D8%B9-%D9%88%D9%85%D9%83%D8%AB%D9%81-%D9%84%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%84%D9%87-%D8%A8%D8%A7%D9%84%D8%B5%D9%88%D8%A7%D8%B1%D9%8A%D8%AE-%D9%88%D8%A7%D9%84%D9%85%D8%B3%D9%8A%D8%B1%D8%A7%D8%AA-%D9%8A%D8%B3%D8%AA%D9%87%D8%AF%D9%81-%D8%AD%D9%8A%D9%81%D8%A7-%D9%88%D8%B4%D9%85%D8%A7%D9%84-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-            <article class="glass-card">
-                <div class="badge">ط®ط¨ط±</div>
-                <div class="card-image">
-                    <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank">
-                        <img src="https://mf.b37mrtl.ru/media/pics/2026.03/thumbnail/69cbfd614c59b773fb462dae.jpg" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">الرئيس الروسي يبحث مع نظيره الإماراتي خلال اتصال هاتفي الأوضاع في الشرق الأوسط</h2>
-                    <p class="card-snippet">
-         أجرى الرئيس الروسي فلاديمير بوتين محادثة هاتفية مع رئيس دولة الإمارات محمد بن زايد آل نهيان، بحثا خل...</p>
-                    <div class="meta-data">
-                        <span>ًں•’ 06:58 PM</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
-                    </div>
-                    <div class="action-area">
-                        <a href="https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="https://arabic.rt.com/world/1773469-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A-%D9%8A%D8%A8%D8%AD%D8%AB-%D9%85%D8%B9-%D9%86%D8%B8%D9%8A%D8%B1%D9%87-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A-%D8%A7%D9%84%D8%A3%D9%88%D8%B6%D8%A7%D8%B9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A3%D9%88%D8%B3%D8%B7/" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
-                </div>
-            </article>
-                <div class="ad-slot-wrapper">
-                    <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>
-                </div>
+                <div id="q9" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+        <div class="flex justify-center my-8">
+            <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default">
+                <script src="//data527.click/js/responsive.js" async></script>
+            </ins>
+        </div></div>
     </main>
 
-    <footer>
-        <p>Alhadath 24 Premium Dashboard &copy; 2026</p>
+    <section class="max-w-xl mx-auto px-6 mt-16 text-right">
+        <div class="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm space-y-8">
+            <div>
+                <h3 class="text-lg font-black text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-file-contract text-indigo-500"></i> الشروط والأحكام
+                </h3>
+                <p class="text-xs text-gray-500 leading-loose">
+                    تحدد هذه الشروط والأحكام قواعد وأنظمة استخدام موقع freevmess الإلكتروني، الموجود على الرابط 
+                    <a href="https://jasim28v-cloud.github.io/vo/" class="text-indigo-600 underline">https://jasim28v-cloud.github.io/vo/</a>. 
+                    بدخولك إلى هذا الموقع، فإننا نفترض موافقتك على هذه الشروط والأحكام. لا تستمر في استخدام freevmess إذا كنت لا توافق على جميع الشروط والأحكام المذكورة في هذه الصفحة... 
+                    <span class="text-indigo-500 font-bold ad-click" onclick="triggerBridge()">اقرأ المزيد</span>
+                </p>
+            </div>
+
+            <div class="border-t border-gray-50 pt-6">
+                <h3 class="text-lg font-black text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-user-shield text-indigo-500"></i> سياسة الخصوصية
+                </h3>
+                <p class="text-xs text-gray-500 leading-loose">
+                    في freevmess، الذي يمكن الوصول إليه من خلال 
+                    <a href="https://jasim28v-cloud.github.io/vo/" class="text-indigo-600 underline">https://jasim28v-cloud.github.io/vo/</a>، 
+                    تُعد خصوصية زوارنا إحدى أولوياتنا الرئيسية. تحتوي وثيقة سياسة الخصوصية هذه على أنواع المعلومات التي يتم جمعها وتسجيلها وكيفية استخدامنا لها.
+                </p>
+            </div>
+
+            <div class="border-t border-gray-50 pt-6">
+                <h3 class="text-lg font-black text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-database text-indigo-500"></i> ملفات السجل
+                </h3>
+                <p class="text-xs text-gray-500 leading-loose">
+                    تتبع منصة Freevmess إجراءً قياسيًا لاستخدام ملفات السجل. تسجل هذه الملفات زيارات المستخدمين للمواقع الإلكترونية، وهو جزء من تحليلات خدمات الاستضافة. تتضمن المعلومات عناوين بروتوكول الإنترنت (IP)... 
+                    <span class="text-indigo-500 font-bold ad-click" onclick="triggerBridge()">اقرأ المزيد</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 mt-20 pt-16 pb-10 px-6 text-center text-white relative">
+        <div class="absolute -top-10 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-10 fill-slate-950">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+        <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 italic">© Freevmess.com. جميع الحقوق محفوظة.</p>
+        <div class="flex justify-center gap-6 text-indigo-400 font-bold text-xs">
+            <span class="ad-click" onclick="triggerBridge()">Privacy Policy</span>
+            <span class="ad-click" onclick="triggerBridge()">Contact Us</span>
+        </div>
     </footer>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-8 py-3 rounded-full text-xs font-bold opacity-0 transition-all pointer-events-none z-50">تمت العملية بنجاح! ✅</div>
+
+    <script>
+        function filterServers(type) {
+            const cards = document.querySelectorAll('.server-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active', 'bg-indigo-600', 'text-white'));
+            event.target.classList.add('active', 'bg-indigo-600', 'text-white');
+            cards.forEach(c => {
+                if(type === 'ALL' || c.getAttribute('data-type') === type) c.style.display = 'block';
+                else c.style.display = 'none';
+            });
+        }
+
+        function downloadConfig(filename, text) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename + ".txt");
+            element.click();
+        }
+
+        function triggerBridge() {
+            const bridge = document.getElementById('bridge-page');
+            bridge.style.display = 'flex';
+            setTimeout(() => { window.open('https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default', '_blank'); bridge.style.display = 'none'; }, 1200);
+        }
+
+        function startCountdown() {
+            let h = 5, m = 59, s = 59;
+            setInterval(() => {
+                s--; if(s<0){s=59; m--;} if(m<0){m=59; h--;}
+                document.getElementById('countdown').innerText = String(h).padStart(2,'0')+":"+String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+            }, 1000);
+        }
+        startCountdown();
+
+        function copyText(t) {
+            navigator.clipboard.writeText(t);
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            setTimeout(() => toast.style.opacity = '0', 2000);
+        }
+
+        function toggleQR(id, link) {
+            const el = document.getElementById(id);
+            if (el.children.length === 0) {
+                new QRCode(el, { text: link, width: 160, height: 160, colorDark: "#1e1b4b" });
+            }
+            el.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
