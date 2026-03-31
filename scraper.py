@@ -1,193 +1,235 @@
 import requests
-from bs4 import BeautifulSoup
-from datetime import datetime
 import re
+from datetime import datetime
 
-def run_news():
-    rss_url = "https://arabic.rt.com/rss/"
-    headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'Accept-Language': 'ar-IQ,ar;q=0.9,en-US;q=0.8,en;q=0.7',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Referer': 'https://www.google.com/',
-    'Sec-Fetch-Dest': 'document',
-    'Sec-Fetch-Mode': 'navigate',
-    'Sec-Fetch-Site': 'none',
-    'Sec-Fetch-User': '?1',
-    'Upgrade-Insecure-Requests': '1',
-    'Cache-Control': 'max-age=0',
-    'Connection': 'keep-alive',
-    'DNT': '1',
-    'Sec-Ch-Ua': '"Google Chrome";v="124", "Not:A-Brand";v="8", "Chromium";v="124"',
-    'Sec-Ch-Ua-Mobile': '?0',
-    'Sec-Ch-Ua-Platform': '"Windows"'
-}
+def run():
+    url = "https://t.me/s/v2nodes"
+    # الرابط الإعلاني الخاص بك
+    my_ad_link = "https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default"
+    
+    headers = {'User-Agent': 'Mozilla/5.0'}
     
     try:
-        # ط§ظ„ط±ط§ط¨ط· ط§ظ„ظ…ط¨ط§ط´ط± ط§ظ„ط®ط§طµ ط¨ظƒ
-        my_direct_link = "https://data527.click/21330bf1d025d41336e6/57154ac610/?placementName=default"
+        response = requests.get(url, headers=headers, timeout=20)
+        links = re.findall(r'(?:vless|vmess|trojan|ss)://[^\s<"\'\s]+', response.text)
         
-        # ط£ظƒظˆط§ط¯ ط§ظ„ط¥ط¹ظ„ط§ظ†ط§طھ ط§ظ„ط¥ط¶ط§ظپظٹط© ط§ظ„طھظٹ ط²ظˆط¯طھظ†ظٹ ط¨ظ‡ط§
-        ad_ins_code = '<ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default"><script src="//data527.click/js/responsive.js" async></script></ins>'
-        ad_script_code = '<script type="text/javascript" src="//data527.click/129ba2282fccd3392338/b1a648bd38/?placementName=default"></script>'
+        clean_links = []
+        for l in links:
+            c = l.replace('&amp;', '&').split('<')[0].split('"')[0].strip()
+            if c not in clean_links: clean_links.append(c)
         
-        response = requests.get(rss_url, headers=headers, timeout=20)
-        response.encoding = 'utf-8'
+        now = datetime.now().strftime("%Y-%m-%d")
         
-        soup = BeautifulSoup(response.content, 'xml')
-        items = soup.find_all('item')
-        
-        ticker_items = " â€¢ ".join([item.title.text for item in items[:12]])
-        news_html = ""
-        
-        for i, item in enumerate(items[:20]):
-            title = item.title.text
-            news_url = item.link.text
-            img_element = item.find('enclosure')
-            img_url = img_element.get('url') if img_element else "https://via.placeholder.com/800x500/1a1a1a/ffffff?text=NEWS+IMAGE"
-            
-            description = item.description.text if item.description else ""
-            clean_desc = re.sub('<[^<]+?>', '', description)[:110] + "..."
+        ad_unit_html = f'''
+        <div class="flex justify-center my-8">
+            <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default">
+                <script src="//data527.click/js/responsive.js" async></script>
+            </ins>
+        </div>'''
 
-            news_html += f'''
-            <article class="glass-card">
-                <div class="badge">{"ط­طµط±ظٹ" if i < 3 else "ط®ط¨ط±"}</div>
-                <div class="card-image">
-                    <a href="{my_direct_link}" target="_blank">
-                        <img src="{img_url}" loading="lazy" alt="news">
-                    </a>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">{title}</h2>
-                    <p class="card-snippet">{clean_desc}</p>
-                    <div class="meta-data">
-                        <span>ًں•’ {datetime.now().strftime("%I:%M %p")}</span>
-                        <span class="trending-fire">ًں”¥ ط¹ط§ط¬ظ„</span>
+        server_cards = ""
+        for i, link in enumerate(clean_links):
+            proto = link.split('://')[0].upper()
+            server_cards += f'''
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="{proto}">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">{proto} SERVER</span>
                     </div>
-                    <div class="action-area">
-                        <a href="{my_direct_link}" target="_blank" class="btn-prime">ط§ظ„طھظپط§طµظٹظ„ ط§ظ„ظƒط§ظ…ظ„ط©</a>
-                        <a href="{news_url}" target="_blank" class="btn-outline">ط§ظ„ظ…طµط¯ط±</a>
-                    </div>
+                    <button onclick="copyText('{link}')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
-            </article>'''
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">{link[:85]}...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('{link}')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('{proto}_{i}', '{link}')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q{i}', '{link}')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q{i}" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>'''
+            if (i + 1) % 5 == 0: server_cards += ad_unit_html
 
-            # ط¥ط¯ط±ط§ط¬ ط§ظ„ط¥ط¹ظ„ط§ظ† ط§ظ„طµط؛ظٹط± (ins) ط¨ط¹ط¯ ط§ظ„ط®ط¨ط± ط§ظ„ط±ط§ط¨ط¹ ظˆط§ظ„ط«ط§ظ…ظ† ظˆط§ظ„ط«ط§ظ†ظٹ ط¹ط´ط±
-            if (i + 1) % 4 == 0:
-                news_html += f'''
-                <div class="ad-slot-wrapper">
-                    {ad_ins_code}
-                </div>'''
-
-        now_date = datetime.now().strftime("%Y-%m-%d")
-        
-        full_html = f'''<!DOCTYPE html>
+        html = f'''<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ط§ظ„ط­ط¯ط« 24 | ط§ظ„ظ†ط³ط®ط© ط§ظ„ظ…ط·ظˆط±ط©</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Freevmess Pro - Ultimate V2Ray</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="//data527.click/129ba2282fccd3392338/b1a648bd38/?placementName=default"></script>
     <style>
-        :root {{
-            --glass-bg: rgba(255, 255, 255, 0.07);
-            --glass-border: rgba(255, 255, 255, 0.15);
-            --primary-accent: #00f2fe;
-            --danger-accent: #ff0844;
-            --text-main: #ffffff;
-        }}
-        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ 
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            background-attachment: fixed;
-            background-size: cover;
-            font-family: 'Cairo', sans-serif; 
-            color: var(--text-main); 
-            padding-top: 150px;
-        }}
-        
-        header {{ 
-            background: rgba(0, 0, 0, 0.4); 
-            backdrop-filter: blur(25px); 
-            padding: 15px 5%; 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
-            border-bottom: 1px solid var(--glass-border);
-            display: flex; justify-content: space-between; align-items: center; 
-        }}
-        .logo {{ font-size: 26px; font-weight: 900; color: #fff; text-decoration: none; }}
-        .logo span {{ color: var(--danger-accent); text-shadow: 0 0 10px var(--danger-accent); }}
-        
-        .ticker-wrap {{ 
-            position: fixed; top: 85px; width: 100%; 
-            background: rgba(255, 8, 68, 0.85); 
-            backdrop-filter: blur(10px);
-            color: #fff; overflow: hidden; height: 40px; 
-            display: flex; align-items: center; z-index: 999;
-        }}
-        .ticker-title {{ background: #000; padding: 0 20px; font-weight: 900; z-index: 2; height: 100%; display: flex; align-items: center; font-size: 13px; }}
-        .ticker-scroll {{ white-space: nowrap; animation: scroll 60s linear infinite; }}
-        @keyframes scroll {{ 0% {{ transform: translateX(100%); }} 100% {{ transform: translateX(-250%); }} }}
-
-        .container {{ max-width: 1250px; margin: 0 auto 50px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }}
-        
-        .glass-card {{ 
-            background: var(--glass-bg); 
-            backdrop-filter: blur(20px);
-            border-radius: 25px; overflow: hidden; 
-            transition: 0.4s; 
-            border: 1px solid var(--glass-border); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }}
-        .glass-card:hover {{ transform: scale(1.03); border-color: var(--primary-accent); }}
-        
-        .badge {{ position: absolute; top: 15px; left: 15px; background: var(--danger-accent); color: #fff; padding: 4px 15px; font-size: 11px; font-weight: 700; border-radius: 10px; z-index: 5; }}
-        .card-image {{ height: 210px; overflow: hidden; }}
-        .card-image img {{ width: 100%; height: 100%; object-fit: cover; }}
-        
-        .card-content {{ padding: 25px; }}
-        .card-title {{ font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.5; }}
-        .card-snippet {{ font-size: 13px; color: #ccc; margin-bottom: 20px; }}
-        
-        .meta-data {{ display: flex; justify-content: space-between; font-size: 11px; color: var(--primary-accent); margin-bottom: 20px; border-top: 1px solid var(--glass-border); padding-top: 15px; }}
-        
-        .action-area {{ display: flex; gap: 10px; }}
-        .btn-prime {{ flex: 2; background: linear-gradient(90deg, #ff0844, #ffb199); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; }}
-        .btn-outline {{ flex: 1; background: rgba(255,255,255,0.05); color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 12px; font-size: 12px; border: 1px solid var(--glass-border); }}
-        
-        .ad-slot-wrapper {{ grid-column: 1 / -1; display: flex; justify-content: center; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 20px; border: 1px dashed var(--glass-border); }}
-        
-        footer {{ text-align: center; padding: 40px; color: rgba(255,255,255,0.4); font-size: 12px; border-top: 1px solid var(--glass-border); }}
-        
-        @media (max-width: 600px) {{ .container {{ grid-template-columns: 1fr; }} }}
+        body {{ font-family: 'Cairo', sans-serif; background-color: #fbfbfd; overflow-x: hidden; scroll-behavior: smooth; }}
+        .gradient-text {{ background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }}
+        .ad-click {{ cursor: pointer; }}
+        .filter-btn.active {{ background-color: #4338ca; color: white; }}
+        #bridge-page {{ display: none; background: rgba(255,255,255,0.98); z-index: 9999; }}
+        @keyframes fadeIn {{ from {{ opacity: 0; transform: scale(0.95); }} to {{ opacity: 1; transform: scale(1); }} }}
+        .animate-fade-in {{ animation: fadeIn 0.4s ease-out; }}
+        .no-scrollbar::-webkit-scrollbar {{ display: none; }}
     </style>
 </head>
-<body>
-    {ad_script_code} <header>
-        <a href="#" class="logo">ط§ظ„ط­ط¯ط« <span>24</span></a>
-        <div style="font-size: 12px; letter-spacing: 1px;">ًں“… {now_date}</div>
-    </header>
+<body class="pb-10">
 
-    <div class="ticker-wrap">
-        <div class="ticker-title">ط£ظ‡ظ… ط§ظ„ط£ظ†ط¨ط§ط،</div>
-        <div class="ticker-scroll">{ticker_items}</div>
+    <div id="bridge-page" class="fixed inset-0 flex flex-col items-center justify-center text-center p-6">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-600 mb-4"></div>
+        <h2 class="text-2xl font-black mb-2 text-slate-800">جاري فحص وتأمين الرابط...</h2>
+        <p class="text-gray-500">يرجى الانتظار قليلاً للحصول على أفضل أداء</p>
     </div>
 
-    <main class="container">
-        {news_html}
+    <nav class="flex justify-between items-center px-6 py-5 max-w-6xl mx-auto border-b border-gray-100 bg-white sticky top-0 z-40">
+        <div class="flex items-center gap-3 ad-click" onclick="triggerBridge()">
+            <div class="w-10 h-10 bg-indigo-900 rounded-lg flex items-center justify-center shadow-lg"><i class="fas fa-bolt text-white"></i></div>
+            <span class="text-xl font-black text-slate-800 uppercase tracking-tighter">Freevmess</span>
+        </div>
+        <div class="text-left leading-none">
+            <span id="countdown" class="text-indigo-600 font-bold text-sm block tracking-widest">--:--:--</span>
+            <span class="text-[9px] text-gray-400 uppercase">Next Update In</span>
+        </div>
+    </nav>
+
+    <section class="px-6 py-12 text-center max-w-4xl mx-auto bg-white rounded-b-[40px] shadow-sm mb-8">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4 gradient-text">خادم VMESS ذكي</h1>
+        <p class="text-gray-400 text-sm mb-8">سيرفرات محدثة من v2nodes بأفضل سرعة استجابة.</p>
+        <div class="ad-click" onclick="triggerBridge()"><img src="https://cdni.iconscout.com/illustration/premium/thumb/network-infrastructure-4437294-3684813.png" class="w-64 mx-auto"></div>
+    </section>
+
+    {ad_unit_html}
+
+    <div class="flex overflow-x-auto gap-2 px-6 mb-8 max-w-2xl mx-auto no-scrollbar">
+        <button onclick="filterServers('ALL')" class="filter-btn active whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 text-xs font-bold shadow-sm transition-all">الكل</button>
+        <button onclick="filterServers('VMESS')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">VMESS</button>
+        <button onclick="filterServers('VLESS')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">VLESS</button>
+        <button onclick="filterServers('TROJAN')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">TROJAN</button>
+        <button onclick="filterServers('SS')" class="filter-btn whitespace-nowrap px-6 py-2 rounded-full border border-indigo-100 bg-white text-xs font-bold shadow-sm transition-all">Shadowsocks</button>
+    </div>
+
+    <main class="max-w-xl mx-auto px-6">
+        <div class="flex flex-col mb-10">
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="font-black text-xl text-slate-800">سيرفرات اليوم</h2>
+                <span class="bg-indigo-50 text-indigo-600 px-4 py-1 rounded-full text-[10px] font-bold border border-indigo-100 uppercase tracking-widest">{now}</span>
+            </div>
+            <p class="text-[11px] text-gray-400 leading-relaxed text-right border-r-2 border-indigo-200 pr-3">
+                يتم جلب البيانات وتحديثها تلقائياً من خوادم النخبة لضمان استقرار الاتصال وحماية الخصوصية.
+                <br>
+                <span class="text-indigo-300 uppercase">Premium Nodes globally collected.</span>
+            </p>
+        </div>
+        
+        <div id="servers-container">{server_cards}</div>
     </main>
 
-    <footer>
-        <p>Alhadath 24 Premium Dashboard &copy; 2026</p>
+    <section class="max-w-xl mx-auto px-6 mt-16 text-right">
+        <div class="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm space-y-8">
+            <div>
+                <h3 class="text-lg font-black text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-file-contract text-indigo-500"></i> الشروط والأحكام
+                </h3>
+                <p class="text-xs text-gray-500 leading-loose">
+                    تحدد هذه الشروط والأحكام قواعد وأنظمة استخدام موقع freevmess الإلكتروني، الموجود على الرابط 
+                    <a href="https://jasim28v-cloud.github.io/vo/" class="text-indigo-600 underline">https://jasim28v-cloud.github.io/vo/</a>. 
+                    بدخولك إلى هذا الموقع، فإننا نفترض موافقتك على هذه الشروط والأحكام. لا تستمر في استخدام freevmess إذا كنت لا توافق على جميع الشروط والأحكام المذكورة في هذه الصفحة... 
+                    <span class="text-indigo-500 font-bold ad-click" onclick="triggerBridge()">اقرأ المزيد</span>
+                </p>
+            </div>
+
+            <div class="border-t border-gray-50 pt-6">
+                <h3 class="text-lg font-black text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-user-shield text-indigo-500"></i> سياسة الخصوصية
+                </h3>
+                <p class="text-xs text-gray-500 leading-loose">
+                    في freevmess، الذي يمكن الوصول إليه من خلال 
+                    <a href="https://jasim28v-cloud.github.io/vo/" class="text-indigo-600 underline">https://jasim28v-cloud.github.io/vo/</a>، 
+                    تُعد خصوصية زوارنا إحدى أولوياتنا الرئيسية. تحتوي وثيقة سياسة الخصوصية هذه على أنواع المعلومات التي يتم جمعها وتسجيلها وكيفية استخدامنا لها.
+                </p>
+            </div>
+
+            <div class="border-t border-gray-50 pt-6">
+                <h3 class="text-lg font-black text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fas fa-database text-indigo-500"></i> ملفات السجل
+                </h3>
+                <p class="text-xs text-gray-500 leading-loose">
+                    تتبع منصة Freevmess إجراءً قياسيًا لاستخدام ملفات السجل. تسجل هذه الملفات زيارات المستخدمين للمواقع الإلكترونية، وهو جزء من تحليلات خدمات الاستضافة. تتضمن المعلومات عناوين بروتوكول الإنترنت (IP)... 
+                    <span class="text-indigo-500 font-bold ad-click" onclick="triggerBridge()">اقرأ المزيد</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 mt-20 pt-16 pb-10 px-6 text-center text-white relative">
+        <div class="absolute -top-10 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-10 fill-slate-950">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+        <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4 italic">© Freevmess.com. جميع الحقوق محفوظة.</p>
+        <div class="flex justify-center gap-6 text-indigo-400 font-bold text-xs">
+            <span class="ad-click" onclick="triggerBridge()">Privacy Policy</span>
+            <span class="ad-click" onclick="triggerBridge()">Contact Us</span>
+        </div>
     </footer>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-8 py-3 rounded-full text-xs font-bold opacity-0 transition-all pointer-events-none z-50">تمت العملية بنجاح! ✅</div>
+
+    <script>
+        function filterServers(type) {{
+            const cards = document.querySelectorAll('.server-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active', 'bg-indigo-600', 'text-white'));
+            event.target.classList.add('active', 'bg-indigo-600', 'text-white');
+            cards.forEach(c => {{
+                if(type === 'ALL' || c.getAttribute('data-type') === type) c.style.display = 'block';
+                else c.style.display = 'none';
+            }});
+        }}
+
+        function downloadConfig(filename, text) {{
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename + ".txt");
+            element.click();
+        }}
+
+        function triggerBridge() {{
+            const bridge = document.getElementById('bridge-page');
+            bridge.style.display = 'flex';
+            setTimeout(() => {{ window.open('{my_ad_link}', '_blank'); bridge.style.display = 'none'; }}, 1200);
+        }}
+
+        function startCountdown() {{
+            let h = 5, m = 59, s = 59;
+            setInterval(() => {{
+                s--; if(s<0){{s=59; m--;}} if(m<0){{m=59; h--;}}
+                document.getElementById('countdown').innerText = String(h).padStart(2,'0')+":"+String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+            }}, 1000);
+        }}
+        startCountdown();
+
+        function copyText(t) {{
+            navigator.clipboard.writeText(t);
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            setTimeout(() => toast.style.opacity = '0', 2000);
+        }}
+
+        function toggleQR(id, link) {{
+            const el = document.getElementById(id);
+            if (el.children.length === 0) {{
+                new QRCode(el, {{ text: link, width: 160, height: 160, colorDark: "#1e1b4b" }});
+            }}
+            el.classList.toggle('hidden');
+        }}
+    </script>
 </body>
 </html>'''
-
+        
         with open("index.html", "w", encoding="utf-8") as f:
-            f.write(full_html)
-        print("Done! High-end Transparent Site with Ads generated.")
+            f.write(html)
+        print("✅ تم تحديث الموقع بنجاح وإضافة النصوص القانونية!")
             
-    except Exception as e:
-        print(f"Error: {e}")
+    except Exception as e: print(f"Error: {e}")
 
-if __name__ == "__main__":
-    run_news()
+if __name__ == "__main__": run()
