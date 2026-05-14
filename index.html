@@ -74,54 +74,6 @@
         </div>
         
         <div id="servers-container">
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
-                    </div>
-                    <button onclick="copyText('vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VLESS_0', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q0', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q0" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
-                    </div>
-                    <button onclick="copyText('vless://45e55198-a5ad-4f19-bb39-236822141d25@188.72.103.3:443?encryption=none&type=ws&security=tls&path=/stream/updates/b66b78d7/019dfd7f-0777-6283-7287-911777c3720f4&host=cdn.lovecrafty.link&fp=chrome&sni=cdn.tracker.yandex.net#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://45e55198-a5ad-4f19-bb39-236822141d25@188.72.103.3:443?encryption=none&type=ws...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('vless://45e55198-a5ad-4f19-bb39-236822141d25@188.72.103.3:443?encryption=none&type=ws&security=tls&path=/stream/updates/b66b78d7/019dfd7f-0777-6283-7287-911777c3720f4&host=cdn.lovecrafty.link&fp=chrome&sni=cdn.tracker.yandex.net#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VLESS_1', 'vless://45e55198-a5ad-4f19-bb39-236822141d25@188.72.103.3:443?encryption=none&type=ws&security=tls&path=/stream/updates/b66b78d7/019dfd7f-0777-6283-7287-911777c3720f4&host=cdn.lovecrafty.link&fp=chrome&sni=cdn.tracker.yandex.net#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q1', 'vless://45e55198-a5ad-4f19-bb39-236822141d25@188.72.103.3:443?encryption=none&type=ws&security=tls&path=/stream/updates/b66b78d7/019dfd7f-0777-6283-7287-911777c3720f4&host=cdn.lovecrafty.link&fp=chrome&sni=cdn.tracker.yandex.net#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q1" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
-                    </div>
-                    <button onclick="copyText('vless://6202b230-417c-4d8e-b624-0f71afa9c75d@94.130.132.180:8443?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40app_bedal&security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&fp=chrome&type=ws&allowInsecure=0&sni=sni.111000.indevs.in#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://6202b230-417c-4d8e-b624-0f71afa9c75d@94.130.132.180:8443?path=%2F%3Fed%3D2560...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('vless://6202b230-417c-4d8e-b624-0f71afa9c75d@94.130.132.180:8443?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40app_bedal&security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&fp=chrome&type=ws&allowInsecure=0&sni=sni.111000.indevs.in#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VLESS_2', 'vless://6202b230-417c-4d8e-b624-0f71afa9c75d@94.130.132.180:8443?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40app_bedal&security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&fp=chrome&type=ws&allowInsecure=0&sni=sni.111000.indevs.in#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q2', 'vless://6202b230-417c-4d8e-b624-0f71afa9c75d@94.130.132.180:8443?path=%2F%3Fed%3D2560%26Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40app_bedal&security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&fp=chrome&type=ws&allowInsecure=0&sni=sni.111000.indevs.in#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q2" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
             <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VMESS">
                 <div class="flex justify-between items-center mb-3">
                     <div class="flex items-center gap-2">
@@ -133,10 +85,10 @@
                 <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vmess://eyJhZGQiOiJmcmVlLXY3LTA5LmVsYnJ1c3dheS5vbmxpbmUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsI...</p>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="copyText('vmess://eyJhZGQiOiJmcmVlLXY3LTA5LmVsYnJ1c3dheS5vbmxpbmUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsImlkIjoiYjRiYzhmY2QtNzM5ZS00NTI1LThiZWQtMjBkMTBlODUwOTg4IiwibmV0Ijoid3MiLCJwYXRoIjoiXC92bWVzcy1iYWxrYXIiLCJwb3J0IjoiNDQzIiwicHMiOiJcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjhbb3BlbnByb3h5bGlzdC5jb21dIHZtZXNzLVVTIiwic2N5IjoiYXV0byIsInNuaSI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIiLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VMESS_3', 'vmess://eyJhZGQiOiJmcmVlLXY3LTA5LmVsYnJ1c3dheS5vbmxpbmUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsImlkIjoiYjRiYzhmY2QtNzM5ZS00NTI1LThiZWQtMjBkMTBlODUwOTg4IiwibmV0Ijoid3MiLCJwYXRoIjoiXC92bWVzcy1iYWxrYXIiLCJwb3J0IjoiNDQzIiwicHMiOiJcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjhbb3BlbnByb3h5bGlzdC5jb21dIHZtZXNzLVVTIiwic2N5IjoiYXV0byIsInNuaSI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIiLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q3', 'vmess://eyJhZGQiOiJmcmVlLXY3LTA5LmVsYnJ1c3dheS5vbmxpbmUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsImlkIjoiYjRiYzhmY2QtNzM5ZS00NTI1LThiZWQtMjBkMTBlODUwOTg4IiwibmV0Ijoid3MiLCJwYXRoIjoiXC92bWVzcy1iYWxrYXIiLCJwb3J0IjoiNDQzIiwicHMiOiJcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjhbb3BlbnByb3h5bGlzdC5jb21dIHZtZXNzLVVTIiwic2N5IjoiYXV0byIsInNuaSI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIiLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                    <button onclick="downloadConfig('VMESS_0', 'vmess://eyJhZGQiOiJmcmVlLXY3LTA5LmVsYnJ1c3dheS5vbmxpbmUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsImlkIjoiYjRiYzhmY2QtNzM5ZS00NTI1LThiZWQtMjBkMTBlODUwOTg4IiwibmV0Ijoid3MiLCJwYXRoIjoiXC92bWVzcy1iYWxrYXIiLCJwb3J0IjoiNDQzIiwicHMiOiJcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjhbb3BlbnByb3h5bGlzdC5jb21dIHZtZXNzLVVTIiwic2N5IjoiYXV0byIsInNuaSI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIiLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q0', 'vmess://eyJhZGQiOiJmcmVlLXY3LTA5LmVsYnJ1c3dheS5vbmxpbmUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsImlkIjoiYjRiYzhmY2QtNzM5ZS00NTI1LThiZWQtMjBkMTBlODUwOTg4IiwibmV0Ijoid3MiLCJwYXRoIjoiXC92bWVzcy1iYWxrYXIiLCJwb3J0IjoiNDQzIiwicHMiOiJcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjhbb3BlbnByb3h5bGlzdC5jb21dIHZtZXNzLVVTIiwic2N5IjoiYXV0byIsInNuaSI6ImZyZWUtdjctMDkuZWxicnVzd2F5Lm9ubGluZSIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIiLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-                <div id="q3" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+                <div id="q0" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
             </div>
             <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VMESS">
                 <div class="flex justify-between items-center mb-3">
@@ -149,8 +101,56 @@
                 <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4W29wZW5wcm94eWxpc3QuY29tX...</p>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="copyText('vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1VUyIsImFkZCI6IjY0LjE4Ni4yMzMuMTMxIiwicG9ydCI6IjEwMDg2IiwidHlwZSI6Im5vbmUiLCJpZCI6IjFlZWI1NWYyLTg1MTYtNDZmMy04YzdiLTE3ZGIxZGUxZGY5YiIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VMESS_4', 'vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1VUyIsImFkZCI6IjY0LjE4Ni4yMzMuMTMxIiwicG9ydCI6IjEwMDg2IiwidHlwZSI6Im5vbmUiLCJpZCI6IjFlZWI1NWYyLTg1MTYtNDZmMy04YzdiLTE3ZGIxZGUxZGY5YiIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q4', 'vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1VUyIsImFkZCI6IjY0LjE4Ni4yMzMuMTMxIiwicG9ydCI6IjEwMDg2IiwidHlwZSI6Im5vbmUiLCJpZCI6IjFlZWI1NWYyLTg1MTYtNDZmMy04YzdiLTE3ZGIxZGUxZGY5YiIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                    <button onclick="downloadConfig('VMESS_1', 'vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1VUyIsImFkZCI6IjY0LjE4Ni4yMzMuMTMxIiwicG9ydCI6IjEwMDg2IiwidHlwZSI6Im5vbmUiLCJpZCI6IjFlZWI1NWYyLTg1MTYtNDZmMy04YzdiLTE3ZGIxZGUxZGY5YiIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q1', 'vmess://eyJ2IjoiMiIsInBzIjoiXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1VUyIsImFkZCI6IjY0LjE4Ni4yMzMuMTMxIiwicG9ydCI6IjEwMDg2IiwidHlwZSI6Im5vbmUiLCJpZCI6IjFlZWI1NWYyLTg1MTYtNDZmMy04YzdiLTE3ZGIxZGUxZGY5YiIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJob3N0IjoiIiwidGxzIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q1" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
+                    </div>
+                    <button onclick="copyText('ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.cli...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_2', 'ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q2', 'ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q2" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
+                    </div>
+                    <button onclick="copyText('ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_3', 'ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q3', 'ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q3" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
+                    </div>
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_4', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q4', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
                 <div id="q4" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
             </div>
@@ -165,63 +165,15 @@
                         <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
                         <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
                     </div>
-                    <button onclick="copyText('ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.cli...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('SS_5', 'ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q5', 'ss://YWVzLTEyOC1nY206Njc4NGFlZTItMGRmZS00NzRmLTg0NDYtNDgwMjU5ZmY5OTE4@ru.safepass.click:442#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q5" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
-                    </div>
-                    <button onclick="copyText('ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('SS_6', 'ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q6', 'ss://YWVzLTI1Ni1nY206UkxVb2FVNG5oOGI4TXFxNw@149.102.152.25:443?#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q6" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
-                    </div>
-                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('SS_7', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q7', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptdFo2UllvYUZaMW9keUFSazktWU5wU0pvd0VKdVA0Ng@45.12.62.62:1234#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q7" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
-                    </div>
                     <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@2.27.7.250:8388#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
                 <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@2.27....</p>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@2.27.7.250:8388#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('SS_8', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@2.27.7.250:8388#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q8', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@2.27.7.250:8388#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                    <button onclick="downloadConfig('SS_5', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@2.27.7.250:8388#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q5', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@2.27.7.250:8388#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-                <div id="q8" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+                <div id="q5" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
             </div>
             <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
                 <div class="flex justify-between items-center mb-3">
@@ -234,8 +186,56 @@
                 <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3M0pETGlsZWhtQlhucFBacDhNY3Jq@fcisisfckhfcakhfcch...</p>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3M0pETGlsZWhtQlhucFBacDhNY3Jq@fcisisfckhfcakhfcch.outline.name:443#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('SS_9', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3M0pETGlsZWhtQlhucFBacDhNY3Jq@fcisisfckhfcakhfcch.outline.name:443#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q9', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3M0pETGlsZWhtQlhucFBacDhNY3Jq@fcisisfckhfcakhfcch.outline.name:443#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                    <button onclick="downloadConfig('SS_6', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3M0pETGlsZWhtQlhucFBacDhNY3Jq@fcisisfckhfcakhfcch.outline.name:443#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q6', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp3M0pETGlsZWhtQlhucFBacDhNY3Jq@fcisisfckhfcakhfcch.outline.name:443#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q6" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
+                    </div>
+                    <button onclick="copyText('vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=no...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VLESS_7', 'vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q7', 'vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q7" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
+                    </div>
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_8', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q8', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q8" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
+                    </div>
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_9', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q9', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
                 <div id="q9" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
             </div>
@@ -250,63 +250,15 @@
                         <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
                         <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
                     </div>
-                    <button onclick="copyText('vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=no...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VLESS_10', 'vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q10', 'vless://f4871135-0f37-44dc-9010-788e760a4b01@cf.090227.xyz:2083?type=ws&encryption=none&host=eu2.337777777.xyz&path=/tr3gaeg&headerType=none&quicSecurity=none&serviceName=&security=tls&fp=chrome&insecure=0&sni=us1.337777777.xyz&ech=cloudflare-ech.com+https://doh.pub/dns-query#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q10" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
-                    </div>
-                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('SS_11', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q11', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg0011499tl.cybervena.com:50099#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q11" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
-                    </div>
-                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
-                </div>
-                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71...</p>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('SS_12', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q12', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYNmJ0YlJ2SkNvM3VUUS0teWFhVDhNdmgwQ2dxaFlUTA@80.71.152.33:8388#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
-                </div>
-                <div id="q12" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
-            </div>
-            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
-                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
-                    </div>
                     <button onclick="copyText('vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=bXstTdAgEyOn8LEMM_K2gIOw7T2iKhr6l-lXcrF4PlM&sni=www.liblib.art#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
                 </div>
                 <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=...</p>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="copyText('vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=bXstTdAgEyOn8LEMM_K2gIOw7T2iKhr6l-lXcrF4PlM&sni=www.liblib.art#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VLESS_13', 'vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=bXstTdAgEyOn8LEMM_K2gIOw7T2iKhr6l-lXcrF4PlM&sni=www.liblib.art#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q13', 'vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=bXstTdAgEyOn8LEMM_K2gIOw7T2iKhr6l-lXcrF4PlM&sni=www.liblib.art#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                    <button onclick="downloadConfig('VLESS_10', 'vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=bXstTdAgEyOn8LEMM_K2gIOw7T2iKhr6l-lXcrF4PlM&sni=www.liblib.art#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q10', 'vless://360f1d71-f8dd-4c71-aa4f-347486312dca@hk.chinablog.xyz:8080?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=bXstTdAgEyOn8LEMM_K2gIOw7T2iKhr6l-lXcrF4PlM&sni=www.liblib.art#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
-                <div id="q13" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+                <div id="q10" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
             </div>
             <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
                 <div class="flex justify-between items-center mb-3">
@@ -319,8 +271,56 @@
                 <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?allowInsecure=0&sn...</p>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="copyText('vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=edge&security=tls#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
-                    <button onclick="downloadConfig('VLESS_14', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=edge&security=tls#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
-                    <button onclick="toggleQR('q14', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=edge&security=tls#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                    <button onclick="downloadConfig('VLESS_11', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=edge&security=tls#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q11', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@r1.mizulina.top:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=edge&security=tls#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q11" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VLESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VLESS SERVER</span>
+                    </div>
+                    <button onclick="copyText('vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VLESS_12', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q12', 'vless://afcac633-0e1a-46c3-bef2-cc01cc0097c8@72.56.62.253:22231?allowInsecure=0&sni=r1.mizulina.top&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q12" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="TROJAN">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">TROJAN SERVER</span>
+                    </div>
+                    <button onclick="copyText('trojan://telegram-id-privatevpns@3.122.87.69:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">trojan://telegram-id-privatevpns@3.122.87.69:22222?security=tls&alpn=http/1.1&headerT...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('trojan://telegram-id-privatevpns@3.122.87.69:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('TROJAN_13', 'trojan://telegram-id-privatevpns@3.122.87.69:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q13', 'trojan://telegram-id-privatevpns@3.122.87.69:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q13" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="TROJAN">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">TROJAN SERVER</span>
+                    </div>
+                    <button onclick="copyText('trojan://telegram-id-privatevpns@35.180.13.11:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">trojan://telegram-id-privatevpns@35.180.13.11:22222?security=tls&alpn=http/1.1&header...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('trojan://telegram-id-privatevpns@35.180.13.11:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('TROJAN_14', 'trojan://telegram-id-privatevpns@35.180.13.11:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q14', 'trojan://telegram-id-privatevpns@35.180.13.11:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
                 </div>
                 <div id="q14" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
             </div>
@@ -328,7 +328,55 @@
             <ins style="width: 300px;height:250px" data-width="300" data-height="250" class="g2fb0b4c321" data-domain="//data527.click" data-affquery="/e3435b2a507722939b6f/2fb0b4c321/?placementName=default">
                 <script src="//data527.click/js/responsive.js" async></script>
             </ins>
-        </div></div>
+        </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="SS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">SS SERVER</span>
+                    </div>
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpoazFTZHlSV2JZaTNJZ3hlb3c5SmRO@142.93.73.182:45389#')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpoazFTZHlSV2JZaTNJZ3hlb3c5SmRO@142.93.73.182:45389...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpoazFTZHlSV2JZaTNJZ3hlb3c5SmRO@142.93.73.182:45389#')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('SS_15', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpoazFTZHlSV2JZaTNJZ3hlb3c5SmRO@142.93.73.182:45389#')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q15', 'ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpoazFTZHlSV2JZaTNJZ3hlb3c5SmRO@142.93.73.182:45389#')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q15" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VMESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VMESS SERVER</span>
+                    </div>
+                    <button onclick="copyText('vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjpudWxsLCJmcCI6bnVsbCwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwibmV0IjoidGNwIiwicGF0aCI6IlwvIiwicG9ydCI6MTgwMDAsInBzIjoiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1DQSIsInNjeSI6bnVsbCwic25pIjpudWxsLCJ0bHMiOiIiLCJ0eXBlIjpudWxsLCJ2IjpudWxsLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjpudWxsLCJmcCI6bnVsbCwia...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjpudWxsLCJmcCI6bnVsbCwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwibmV0IjoidGNwIiwicGF0aCI6IlwvIiwicG9ydCI6MTgwMDAsInBzIjoiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1DQSIsInNjeSI6bnVsbCwic25pIjpudWxsLCJ0bHMiOiIiLCJ0eXBlIjpudWxsLCJ2IjpudWxsLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VMESS_16', 'vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjpudWxsLCJmcCI6bnVsbCwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwibmV0IjoidGNwIiwicGF0aCI6IlwvIiwicG9ydCI6MTgwMDAsInBzIjoiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1DQSIsInNjeSI6bnVsbCwic25pIjpudWxsLCJ0bHMiOiIiLCJ0eXBlIjpudWxsLCJ2IjpudWxsLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q16', 'vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjpudWxsLCJmcCI6bnVsbCwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwibmV0IjoidGNwIiwicGF0aCI6IlwvIiwicG9ydCI6MTgwMDAsInBzIjoiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2W29wZW5wcm94eWxpc3QuY29tXSB2bWVzcy1DQSIsInNjeSI6bnVsbCwic25pIjpudWxsLCJ0bHMiOiIiLCJ0eXBlIjpudWxsLCJ2IjpudWxsLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q16" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div>
+            <div class="server-card bg-white border border-gray-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all mb-4 text-right" data-type="VMESS">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span></span>
+                        <span class="bg-indigo-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">VMESS SERVER</span>
+                    </div>
+                    <button onclick="copyText('vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6bnVsbCwiZnAiOm51bGwsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOjE4MDAwLCJwcyI6Ilx1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNltvcGVucHJveHlsaXN0LmNvbV0gdm1lc3MtQ0EiLCJzY3kiOm51bGwsInNuaSI6bnVsbCwidGxzIjoiIiwidHlwZSI6bnVsbCwidiI6bnVsbCwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="text-gray-400 hover:text-indigo-600"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="text-[10px] text-gray-400 font-mono break-all mb-4 bg-gray-50 p-2 rounded leading-relaxed">vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6bnVsbCwiZnAiOm51bGwsI...</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="copyText('vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6bnVsbCwiZnAiOm51bGwsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOjE4MDAwLCJwcyI6Ilx1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNltvcGVucHJveHlsaXN0LmNvbV0gdm1lc3MtQ0EiLCJzY3kiOm51bGwsInNuaSI6bnVsbCwidGxzIjoiIiwidHlwZSI6bnVsbCwidiI6bnVsbCwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="py-3 bg-indigo-600 text-white rounded-xl font-bold text-xs hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100">نسخ الإعدادات</button>
+                    <button onclick="downloadConfig('VMESS_17', 'vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6bnVsbCwiZnAiOm51bGwsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOjE4MDAwLCJwcyI6Ilx1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNltvcGVucHJveHlsaXN0LmNvbV0gdm1lc3MtQ0EiLCJzY3kiOm51bGwsInNuaSI6bnVsbCwidGxzIjoiIiwidHlwZSI6bnVsbCwidiI6bnVsbCwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="py-3 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all shadow-lg">تحميل الملف <i class="fas fa-download ml-1"></i></button>
+                    <button onclick="toggleQR('q17', 'vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6bnVsbCwiZnAiOm51bGwsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOjE4MDAwLCJwcyI6Ilx1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNltvcGVucHJveHlsaXN0LmNvbV0gdm1lc3MtQ0EiLCJzY3kiOm51bGwsInNuaSI6bnVsbCwidGxzIjoiIiwidHlwZSI6bnVsbCwidiI6bnVsbCwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=')" class="col-span-2 py-2 bg-gray-100 text-gray-600 rounded-xl text-xs font-semibold hover:bg-gray-200 uppercase">إظهار الباركود 🔳</button>
+                </div>
+                <div id="q17" class="hidden mt-4 p-4 border-2 border-dashed border-indigo-50 bg-indigo-50/30 rounded-2xl flex flex-col items-center animate-fade-in"></div>
+            </div></div>
     </main>
 
     <section class="max-w-xl mx-auto px-6 mt-16 text-right">
